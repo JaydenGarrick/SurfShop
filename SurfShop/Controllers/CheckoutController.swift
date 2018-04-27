@@ -9,10 +9,14 @@
 import Foundation
 
 class CheckoutController {
-    private let network = NetworkManager()
+    private let network: Networking
     private var bag: Bag?
     
-    static let shared = CheckoutController()
+    static let shared = CheckoutController(network: NetworkManager())
+    
+    init(network: Networking) {
+        self.network = network
+    }
     
     func addToBag(productSelection: ProductSelection, bag: Bag? = nil, completion: @escaping (Bag?) -> ()) {
         add(productSelection: productSelection, to: bag, completion: completion)
