@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "idiom" : "iphone",
+      "filename" : "Product_Default.pdf"
+    },
+    {
+      "idiom" : "ipad",
+      "filename" : "Product_Default_iPad.pdf"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
