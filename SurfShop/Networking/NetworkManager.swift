@@ -14,7 +14,7 @@ enum HTTPMethod: String {
     case post = "POST"
 }
 
-class NetworkManager {
+class NetworkManager: Networking {
     private let scheme: String = "http"
     private let host: String = "localhost"
     private let port: Int = 8080
@@ -51,3 +51,80 @@ extension NetworkManager {
         return request
     }
 }
+
+protocol Networking {
+    func performTask(path: String, queryItems: [URLQueryItem]?, method: HTTPMethod, body: Data?, headers: [String: String]?, completion: @escaping (Data?) -> ())
+}
+
+extension Networking {
+    func performTask(path: String, completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: nil, method: .get, body: nil, headers: nil, completion: completion)
+    }
+    
+    func performTask(path: String, queryItems: [URLQueryItem], completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: queryItems, method: .get, body: nil, headers: nil, completion: completion)
+    }
+    
+    func performTask(path: String, method: HTTPMethod, completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: nil, method: method, body: nil, headers: nil, completion: completion)
+    }
+    
+    func performTask(path: String, body: Data, completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: nil, method: .get, body: body, headers: nil, completion: completion)
+    }
+    
+    func performTask(path: String, headers: [String: String], completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: nil, method: .get, body: nil, headers: headers, completion: completion)
+    }
+    
+    func performTask(path: String, queryItems: [URLQueryItem], method: HTTPMethod, completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: queryItems, method: method, body: nil, headers: nil, completion: completion)
+    }
+    
+    func performTask(path: String, queryItems: [URLQueryItem], body: Data, completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: queryItems, method: .get, body: body, headers: nil, completion: completion)
+    }
+    
+    func performTask(path: String, queryItems: [URLQueryItem], headers: [String: String], completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: queryItems, method: .get, body: nil, headers: headers, completion: completion)
+    }
+    
+    func performTask(path: String, method: HTTPMethod, body: Data, completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: nil, method: method, body: body, headers: nil, completion: completion)
+    }
+    
+    func performTask(path: String, method: HTTPMethod, headers: [String: String], completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: nil, method: method, body: nil, headers: headers, completion: completion)
+    }
+    
+    func performTask(path: String, body: Data, headers: [String: String], completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: nil, method: .get, body: body, headers: headers,     completion: completion)
+    }
+    
+    func performTask(path: String, queryItems: [URLQueryItem], method: HTTPMethod, body: Data, completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: queryItems, method: method, body: body, headers:     nil, completion: completion)
+    }
+    
+    func performTask(path: String, queryItems: [URLQueryItem], method: HTTPMethod, headers: [String: String], completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: queryItems, method: method, body: nil, headers:     headers, completion: completion)
+    }
+    
+    func performTask(path: String, queryItems: [URLQueryItem], body: Data, headers: [String:String], completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: queryItems, method: .get, body: body, headers: headers, completion: completion)
+    }
+    
+    func performTask(path: String, method: HTTPMethod, body: Data, headers: [String: String], completion: @escaping (Data?) -> ()) {
+        performTask(path: path, queryItems: nil, method: method, body: body, headers: headers, completion: completion)
+    }
+
+}
+
+
+
+
+
+
+
+
+
+

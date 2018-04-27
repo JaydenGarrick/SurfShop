@@ -9,9 +9,12 @@
 import Foundation
 
 class ProductController {
-    private let network = NetworkManager()
+    private let network: Networking
+    static let shared = ProductController(network: NetworkManager())
     
-    static let shared = ProductController()
+    init(network: Networking) {
+        self.network = network
+    }
     
     func getCategories(completion: @escaping ([Category]) -> ()) {
         network.performTask(path: "/categories") { (data) in
