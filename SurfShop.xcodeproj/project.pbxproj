@@ -39,6 +39,8 @@
 		1A9F89F3205DB47000863562 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F89F2205DB47000863562 /* Notifications.swift */; };
 		1AFC6F2E2035D91900DCAF09 /* ProductSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC6F2D2035D91900DCAF09 /* ProductSelection.swift */; };
 		8106F6902093B685006CE80C /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8106F68F2093B685006CE80C /* MockNetworkManager.swift */; };
+		8106F6932093B95C006CE80C /* ProductControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8106F6922093B95C006CE80C /* ProductControllerTests.swift */; };
+		8179759F2093CCF7007AEC9F /* CheckoutControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8179759E2093CCF7007AEC9F /* CheckoutControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		1A9F89F2205DB47000863562 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		1AFC6F2D2035D91900DCAF09 /* ProductSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSelection.swift; sourceTree = "<group>"; };
 		8106F68F2093B685006CE80C /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		8106F6922093B95C006CE80C /* ProductControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductControllerTests.swift; sourceTree = "<group>"; };
+		8179759E2093CCF7007AEC9F /* CheckoutControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +168,9 @@
 		1A2F2A87201FE36F00A6A580 /* SurfShopTests */ = {
 			isa = PBXGroup;
 			children = (
-				8106F68F2093B685006CE80C /* MockNetworkManager.swift */,
+				8106F6912093B8E9006CE80C /* Mock */,
 				1A9AB1BB203CC5E500428BD5 /* TestData */,
+				8179759D2093CCD7007AEC9F /* Tests */,
 				1A2F2A8A201FE36F00A6A580 /* Info.plist */,
 			);
 			path = SurfShopTests;
@@ -286,6 +291,23 @@
 				1A9F89F2205DB47000863562 /* Notifications.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		8106F6912093B8E9006CE80C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				8106F68F2093B685006CE80C /* MockNetworkManager.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		8179759D2093CCD7007AEC9F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8106F6922093B95C006CE80C /* ProductControllerTests.swift */,
+				8179759E2093CCF7007AEC9F /* CheckoutControllerTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,9 +477,11 @@
 				8106F6902093B685006CE80C /* MockNetworkManager.swift in Sources */,
 				1A9AB1CB203CE1E300428BD5 /* ProductSelectionJSON.swift in Sources */,
 				1A9AB1CF203CE63F00428BD5 /* CategoryJSON.swift in Sources */,
+				8179759F2093CCF7007AEC9F /* CheckoutControllerTests.swift in Sources */,
 				1A9AB1C5203CC8B300428BD5 /* OrderJSON.swift in Sources */,
 				1A9AB1BF203CC7EC00428BD5 /* ProductArrayJSON.swift in Sources */,
 				1A9AB1C3203CC8A700428BD5 /* BagJSON.swift in Sources */,
+				8106F6932093B95C006CE80C /* ProductControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
